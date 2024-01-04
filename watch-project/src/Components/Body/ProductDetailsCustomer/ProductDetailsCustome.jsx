@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './ProductdetailsCustomer.scss'
 import axios from 'axios'
 import { Link, useParams } from 'react-router-dom'
+import Navbar from '../../Navbar/Navbar'
 
 const ProductDetailsCustome = () => {
   const { id } = useParams()
@@ -98,24 +99,12 @@ const ProductDetailsCustome = () => {
   return (
     <div>
 
-<div className="main-ind">
-        <div className="main-sub-ind">
 
-          <div className="log-phone-ind">
-            <span><i className="fa fa-phone" aria-hidden="true" ></i></span><Link to={`/whishList/${id}`}  id='Linkkkkss'><span id='ind-num'>WISH</span></Link>
-          </div>
 
-          <div className="text-sub-ind">
-            <p></p>
-          </div>
 
-          <div className="log-cart-ind">
-            <span><Link to={`CartCustomer/${Id}`} id='Linkkkkss' > CART</Link> </span> <span><Link to={'/CustomerReg'} id='Linkkkkss'><span id='log-ind-l'>LOGIN</span></Link>  OR REGISTER</span>
-          </div>
 
-        </div>
 
-      </div>
+         <Navbar/>
 
 
       <div className='body10'>
