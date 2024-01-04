@@ -7,22 +7,64 @@ import Navbar from '../../Navbar/Navbar'
 const ProductDetailsCustome = () => {
   const { id } = useParams()
   const [msg, setMsg,] = useState('')
-  const [Id,SetId] = useState("")/////my home name
+
+  const [loading, setLoading] = useState(true);
+  const [cartItems, setCartItems] = useState([])
+
+  let product_id
+  const [Id, SetId] = useState("")/////my home name
   const value = JSON.parse(localStorage.getItem('customer_token'));
   const [getProducts, setProduct] = useState({
-    cust_id:"",
-    productname:"",
-    category_name:"",
-    Description:"",
-    price:"",
-    banner:"",
+    cust_id: "",
+    prod_id: "",
+    productname: "",
+    category_name: "",
+    Description: "",
+    quantity:"",
+    price: "",
+    banner: "",
 
-   
+
   })
+  useEffect(() => {
+    if (Id) {
+      getPrdctDetails();
+     
+    }
+  }, [Id]);
+
+  const getPrdctDetails = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3003/wholewatch/getCartProduct/${Id}`);
+      setCartItems(res.data);
+      // console.log("All prod_id in cartItems:", cartItems.map(item => item.prod_id));
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching cart items:", error);
+      setLoading(false);
+    }
+
+  };
+
+  useEffect(() => {
+    getPrdctDetails();
+  }, []);
+
+
+
+
+
+
+
+
+
   const getProduct = async () => {
     const res = await axios.get(`http://localhost:3003/wholewatch/getProduct/${id}`)
+
     setProduct(res.data)
-    /////// console.log(getProducts);
+    product_id=res.data._id
+    console.log(product_id);
+    //  console.log(getProducts._id);
   }
 
   useEffect(() => {
@@ -36,51 +78,52 @@ const ProductDetailsCustome = () => {
     const res = await axios.get("http://localhost:3003/wholewatch/CustHome", {
       headers: { Authorization: `Bearer ${value}` },
     })
-    console.log(res.data);
-    const data=res.data
+    // console.log(res.data);
+    const data = res.data
     setMsg(data.msg)
     SetId(data.id)
-   
+
   }
   useEffect(() => {
     getName()
   }, [])
   // console.log(id);
-  console.log("cust",Id);
+  // console.log("cust",Id);
   ////// adding to cart //////
 
   const addToCart = async () => {
     try {
 
-      console.log("Customer ID:",msg,id);
-      const res = await axios.post("http://localhost:3003/wholewatch/addToCart",{ ...getProducts,cust_id:Id});
-     
+      // console.log("Customer ID:",msg,id);
+      const res = await axios.post("http://localhost:3003/wholewatch/addToCart", { ...getProducts, cust_id: Id,quantity:1,prod_id: getProducts._id });
+
       console.log(res.data);
-      if(res){
+      if (res) {
         alert("Added To Cart")
-      }else{
+        window.location.reload()
+      } else {
         alert("Error adding product to cart. Please try again.")
       }
     } catch (error) {
-        console.error("Error adding product to cart:", error);
-        alert("Error adding product to cart. Please try again.");
+      console.error("Error adding product to cart:", error);
+      alert("Error adding product to cart. Please try again.");
     }
   };
 
   //////add to wishlist
-   
+
   const addToWishList = async () => {
     try {
-      const res = await axios.post("http://localhost:3003/wholewatch/addtowishList", {...getProducts,cust_id:Id});
+      const res = await axios.post("http://localhost:3003/wholewatch/addtowishList", { ...getProducts, cust_id: Id });
       console.log(res.data);
-      if(res){
+      if (res) {
         alert("Added To Wishlist")
-      }else{
+      } else {
         alert("Error adding product to Wishlist. Please try again.")
       }
     } catch (error) {
-        console.error("Error adding product to Wishlist:", error);
-        alert("Error adding product to Wishlist. Please try again.");
+      console.error("Error adding product to Wishlist:", error);
+      alert("Error adding product to Wishlist. Please try again.");
     }
   };
 
@@ -104,7 +147,7 @@ const ProductDetailsCustome = () => {
 
 
 
-         <Navbar/>
+      <Navbar />
 
 
       <div className='body10'>
@@ -173,8 +216,32 @@ const ProductDetailsCustome = () => {
               </div>
             </div>
             <div className="btn-cust-add-cart">
-              <div className='Add-cart-cus'><button onClick={addToCart}> Add To Cart <i className="fa fa-shopping-cart" aria-hidden="true"></i> </button> </div>
-              <div className='Add-cart-cus'><button onClick={addToWishList}>Add To Wish <i className="fa fa-picture-o wishhh" aria-hidden="true"></i> </button></div>
+
+
+              <div className='Add-cart-cus'>
+                {
+                  cartItems.map(item=>item.prod_id).includes(getProducts._id)?(
+
+                    <button className='addToCartBtn'>
+                    <Link className='gotocart' to={`/CartCustomer/${Id}`}>
+                      Goto Cart 
+                    </Link>
+                  </button>
+
+                   
+                  ):(
+
+                    <button onClick={addToCart}> Add To Cart <i className="fa fa-shopping-cart" aria-hidden="true"></i></button>
+
+          
+          
+                    )}
+             
+              </div>
+
+              <div className='Add-cart-cus'>
+                <button onClick={addToWishList}>Add To Wish <i className="fa fa-picture-o wishhh" aria-hidden="true"></i> </button>
+              </div>
             </div>
 
 
