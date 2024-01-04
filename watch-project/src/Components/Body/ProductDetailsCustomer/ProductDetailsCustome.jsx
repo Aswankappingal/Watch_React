@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom'
 
 const ProductDetailsCustome = () => {
   const { id } = useParams()
-  const [msg, setMsg,] = useState("")
+  const [msg, setMsg,] = useState('')
   const [Id,SetId] = useState("")/////my home name
   const value = JSON.parse(localStorage.getItem('customer_token'));
   const [getProducts, setProduct] = useState({
@@ -36,14 +36,16 @@ const ProductDetailsCustome = () => {
       headers: { Authorization: `Bearer ${value}` },
     })
     console.log(res.data);
-    setMsg(res.data.msg)
-    SetId(res.data.id)
+    const data=res.data
+    setMsg(data.msg)
+    SetId(data.id)
+   
   }
   useEffect(() => {
     getName()
   }, [])
-  console.log(id);
-
+  // console.log(id);
+  console.log("cust",Id);
   ////// adding to cart //////
 
   const addToCart = async () => {
@@ -95,6 +97,25 @@ const ProductDetailsCustome = () => {
 
   return (
     <div>
+
+<div className="main-ind">
+        <div className="main-sub-ind">
+
+          <div className="log-phone-ind">
+            <span><i className="fa fa-phone" aria-hidden="true" ></i></span><Link to={`/whishList/${id}`}  id='Linkkkkss'><span id='ind-num'>WISH</span></Link>
+          </div>
+
+          <div className="text-sub-ind">
+            <p></p>
+          </div>
+
+          <div className="log-cart-ind">
+            <span><Link to={`CartCustomer/${Id}`} id='Linkkkkss' > CART</Link> </span> <span><Link to={'/CustomerReg'} id='Linkkkkss'><span id='log-ind-l'>LOGIN</span></Link>  OR REGISTER</span>
+          </div>
+
+        </div>
+
+      </div>
 
 
       <div className='body10'>
