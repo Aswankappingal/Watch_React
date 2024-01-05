@@ -48,7 +48,7 @@ const WishList = () => {
                 <div className="main-sub-ind">
 
                     <div className="log-phone-ind">
-                        <span><i className="fa fa-phone" aria-hidden="true" ></i></span><Link to={`#`} id='Linkkkkss' ><span id='ind-num'>WishList</span></Link>
+                        <span><i className="fa fa-phone" aria-hidden="true" ></i></span><Link to={`#`} id='Linkkkkss' ><span id='ind-num'>Now in WishList</span></Link>
                     </div>
 
 
@@ -57,7 +57,7 @@ const WishList = () => {
                     </div>
 
                     <div className="log-cart-ind">
-                        <span><Link to={`CartCustomer`} id='Linkkkkss' > CART</Link> </span> <span><Link to={'#'} id='Linkkkkss'><span id='log-ind-l'>LOGIN</span></Link>  OR REGISTER</span>
+                        <span><Link to={`CartCustomer`} id='Linkkkkss' > </Link> </span> <span><Link to={'#'} id='Linkkkkss'><span id='log-ind-l'></span></Link> Show Your Wish</span>
                     </div>
 
 
@@ -78,7 +78,7 @@ const WishList = () => {
                 {getPrdct.length === 0 ? (
                     <>
 
-                        <p className="no-items-message">No items in the cart</p>
+                        <p className="no-items-message">No items in the Wish</p>
                         <div className='shpDiv'><Link className='shp-now-btn' to='/'>Shop Now</Link></div>
 
 
