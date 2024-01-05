@@ -50,9 +50,9 @@ const Navbar = () => {
 
                     <div className="log-cart-ind">
                         <span><Link to={`/CartCustomer/${Id}`} id='Linkkkkss' > CART</Link> </span> 
-                        <span><Link to={'/CustomerReg'} id='Linkkkkss'>
-                        <span id='log-ind-l'>LOGIN</span></Link> 
-                         OR REGISTER</span>
+                        <span><Link to={'#'} id='Linkkkkss'>
+                        <span id='log-ind-l'>JUST LOGINED</span></Link> 
+                         </span>
                     </div>
 
                 </div>

@@ -185,6 +185,35 @@
           }
        
         }
+
+       .gotocart {
+ 
+          outline: 0;
+          border: 0;
+          background: none;
+          // border: 1px solid #d9d9d9;
+          text-decoration: none;
+          padding: 8px 0px;
+          margin-bottom: 10px;
+          color: #515151;
+          text-transform: uppercase;
+          width: 125px;
+          font-family: inherit;
+          margin-right: 5px;
+          transition: all 0.3s ease;
+          font-weight: 500;
+          
+          &:hover {
+            
+            background-color: #fff9f9;
+           
+            // border: 1px solid #aedaa6;
+            color: #000000;
+            cursor: pointer;
+            
+          }
+       
+        }
       
  
        
