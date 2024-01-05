@@ -356,7 +356,7 @@ export function delwishListProduct(req,res)
 
 
 
-
+/////// Cart
 
 export async function getCartProduct(req,res){
   const { id }=req.params;
@@ -386,4 +386,15 @@ export function delCartProduct(req,res)
     }).catch((error)=>{
         res.status(404).send(error)
     })
+}
+
+export async function editQuantity(req, res) {
+  const { prodId } = req.params;
+  try {
+      const updatedData = req.body;
+      const value = await cart_schema.updateOne({ prod_id: prodId }, { $set: updatedData });
+      res.status(200).send(value);
+  } catch (error) {
+      res.status(404).send(error);
+  }
 }
