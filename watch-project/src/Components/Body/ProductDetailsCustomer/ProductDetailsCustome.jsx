@@ -10,6 +10,7 @@ const ProductDetailsCustome = () => {
 
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([])
+  const [WishItems, setWishItems] = useState([])
 
   let product_id
   const [Id, SetId] = useState("")/////my home name
@@ -26,6 +27,8 @@ const ProductDetailsCustome = () => {
 
 
   })
+
+  ////////button change
   useEffect(() => {
     if (Id) {
       getPrdctDetails();
@@ -48,6 +51,34 @@ const ProductDetailsCustome = () => {
 
   useEffect(() => {
     getPrdctDetails();
+  }, []);
+
+
+
+// wish //////
+
+  useEffect(() => {
+    if (Id) {
+      getWishdetails();
+     
+    }
+  }, [Id]);
+
+  const getWishdetails = async () => {
+    try {
+      const res = await axios.get(`http://localhost:3003/wholewatch/getWishlistProduct/${Id}`);
+      setWishItems(res.data);
+      // console.log("All prod_id in cartItems:", cartItems.map(item => item.prod_id));
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching cart items:", error);
+      setLoading(false);
+    }
+
+  };
+
+  useEffect(() => {
+    getWishdetails();
   }, []);
 
 
@@ -114,10 +145,11 @@ const ProductDetailsCustome = () => {
 
   const addToWishList = async () => {
     try {
-      const res = await axios.post("http://localhost:3003/wholewatch/addtowishList", { ...getProducts, cust_id: Id });
+      const res = await axios.post("http://localhost:3003/wholewatch/addtowishList", { ...getProducts, cust_id: Id,quantity:1,prod_id :getProducts._id });
       console.log(res.data);
       if (res) {
         alert("Added To Wishlist")
+        window.location.reload()
       } else {
         alert("Error adding product to Wishlist. Please try again.")
       }
@@ -240,7 +272,23 @@ const ProductDetailsCustome = () => {
               </div>
 
               <div className='Add-cart-cus'>
-                <button onClick={addToWishList}>Add To Wish <i className="fa fa-picture-o wishhh" aria-hidden="true"></i> </button>
+
+                  {
+                    WishItems.map(item=>item.prod_id).includes(getProducts._id)?(
+
+                      <button className='addToCartBtn'>
+                      <Link className='gotocart' to={`/whishList/${Id}`}>
+                        Goto Wish 
+                      </Link>
+                    </button>
+
+                    ):(
+                      <button onClick={addToWishList}>Add To Wish <i className="fa fa-picture-o wishhh" aria-hidden="true"></i> </button>
+                    )}
+                  
+               
+
+
               </div>
             </div>
 
