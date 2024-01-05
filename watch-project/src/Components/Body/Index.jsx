@@ -27,6 +27,7 @@ const Index = () => {
 
   const Logout = () => {
     const isConfirmed = window.confirm("Are you sure you want to logout?");
+    window.location.reload()
     if (isConfirmed) {
       localStorage.clear();
       naviagate("/")
@@ -142,7 +143,7 @@ const Index = () => {
         <div className='home-ind-2'>
           {msg ? (
             <>
-              <Link className="nav-link mx-2 text-uppercase active" to='/CustomerLogin' id="sign-ind"><i className="fa fa-user" aria-hidden="true"></i>   {msg}  <button className='logout-ind' onClick={Logout}>Logout</button></Link>
+              <Link className="nav-link mx-2 text-uppercase active" to='/' id="sign-ind"><i className="fa fa-user" aria-hidden="true"></i>   {msg}  <button className='logout-ind' onClick={Logout}>Logout</button></Link>
 
             </>
           ) : (
