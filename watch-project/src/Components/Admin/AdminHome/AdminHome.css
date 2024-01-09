@@ -481,6 +481,10 @@ justify-content: space-between;
         padding-top: 1%;
         gap: 25px;
     }
+    .backandlogout{
+        display: inline;
+     
+    }
 
 
 
