@@ -39,6 +39,7 @@ const Cartcustomer = () => {
   
     useEffect(() => {
       const totalPriceSum = getPrdct.reduce((sum, product) => sum + Number(product.price * product.quantity), 0);
+      console.log(totalPriceSum);
       setTotalPrice(totalPriceSum);
     }, [getPrdct]);
 

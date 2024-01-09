@@ -45,6 +45,11 @@
     margin-left: 20px;
     font-size: 18px;
 }
+.display-username button{
+    border: none;
+    background-color: white;
+
+}
 .logggggg{
     margin-left: 10px;
     margin-top: 10px; 
@@ -454,7 +459,7 @@ justify-content: space-between;
     color: #131212;
 }
 
-@media (min-width:310px) and (max-width:575.98px) {
+@media (min-width:310px) and (max-width:675.98px) {
     .nav-main {
         display: none;
        
@@ -476,6 +481,17 @@ justify-content: space-between;
         font-weight: 700;
         letter-spacing: .30000001192092896px;
     
+    }
+    .home-log-admi{
+        background-color:white;
+        color: rgb(25, 24, 24);
+    }
+    .back-btn{
+        color: black;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 10px;
+        
     }
     .itemlist {
         display: none;
@@ -509,7 +525,7 @@ justify-content: space-between;
     .main1content{
         width: 80%;
         background-color:rgb(207, 230, 231);
-        height: 100vh;
+        height: 60vh;
         padding: 29px;
     }
     .borderleftcontent{
@@ -557,7 +573,7 @@ justify-content: space-between;
     }
     .borderleft{
         border-right: 1px solid rgb(243, 241, 241);
-        height: 100vh;
+        height: 60vh;
         width: 10%;
         padding: 10px;
         min-width: 200px;
