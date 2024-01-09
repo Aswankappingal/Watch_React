@@ -183,7 +183,8 @@ const Cartcustomer = () => {
             </tr>
           </table>
 
-          <button onClick={BuyNow}>  Proceed To Checkout</button>
+          {getPrdct==""?( <button>Your Cart Is Empty</button>):(<div className='removecart2'> <button onClick={BuyNow}>  Proceed To Checkout</button></div>)}
+
         </div>
       </div>
     </div>
