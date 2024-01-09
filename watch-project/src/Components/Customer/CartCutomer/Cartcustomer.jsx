@@ -110,6 +110,7 @@ const Cartcustomer = () => {
   return (
     <div>
          <div className='cart-main'>
+         <Navbar />
      
       <div className="back">
         <Link className='back-btn' to='/'>Back</Link>
