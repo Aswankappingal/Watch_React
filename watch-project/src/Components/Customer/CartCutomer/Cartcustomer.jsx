@@ -113,6 +113,7 @@ const Cartcustomer = () => {
       <div className="back">
         <Link className='back-btn' to='/'>Back</Link>
       </div>
+      <Navbar/>
       <div><h3 className='main-heading'>Items In Cart</h3></div>
       <div className="display-ietm-main">
         
