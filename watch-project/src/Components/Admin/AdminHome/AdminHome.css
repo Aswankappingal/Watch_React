@@ -451,3 +451,41 @@ justify-content: space-between;
 .Linker-Admin{
     color: #131212;
 }
+
+@media (min-width:310px) and (max-width:575.98px) {
+    .nav-main {
+        display: none;
+       
+      
+    }
+    .navitem {
+        display: none ;
+    }
+    .centernav h4::before {
+        content: "FREE MASKARAS  WORTH ₹1,950 ON ₹4,000 SHOP";
+        animation: animate infinite 3s;
+        background-color: black;
+        padding: 100px 100px;
+        border-radius: 40px;
+        color: white;
+        font-family: ano-bold_regular, Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 700;
+        letter-spacing: .30000001192092896px;
+    
+    }
+    .itemlist {
+        display: none;
+        padding-left: 19.8%;
+        padding-top: 1%;
+        gap: 25px;
+    }
+
+
+
+
+
+
+
+}
