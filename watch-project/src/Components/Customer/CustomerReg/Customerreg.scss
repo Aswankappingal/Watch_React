@@ -75,7 +75,20 @@
       margin-bottom: 20px;
       border-radius: 14px;
     }
-    }
+
     @media(min-width:300px) and (max-width:575.98px){
-      
+      .iHaveAccount{
+     
+        font-size: 14px;
+        border: 1px solid rgb(181, 7, 61);
+        background-color: rgb(226, 22, 35);
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+        padding:  4px 30px;
+        margin-bottom: 20px;
+        border-radius: 14px;
+      }
+
+
     }
+  }
