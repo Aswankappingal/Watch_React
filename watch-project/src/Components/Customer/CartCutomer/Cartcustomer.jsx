@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import './CartCustomer.scss'
+import Navbar from '../../Navbar/Navbar'
 
 const Cartcustomer = () => {
 
@@ -113,7 +114,7 @@ const Cartcustomer = () => {
       <div className="back">
         <Link className='back-btn' to='/'>Back</Link>
       </div>
-      <Navbar/>
+    
       <div><h3 className='main-heading'>Items In Cart</h3></div>
       <div className="display-ietm-main">
         
