@@ -79,7 +79,7 @@ const Navbar = () => {
 
     return (
         <div>
-            /////
+            ////
 
             <div className="main-ind">
                 <div className="main-sub-ind">
