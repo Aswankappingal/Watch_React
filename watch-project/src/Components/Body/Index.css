@@ -115,14 +115,15 @@
 .nav-main-ind a span {
     color: rgb(0, 0, 0);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
 
 }
 
 .navbar-id-color {
     background-color: #fff5f5;
-    border-top: 0.3px solid #e9e7e7c3;
-    background: -webkit-linear-gradient(to right, #fffbfb, #fffdfe);
-    background: linear-gradient(to right, #ffffff, #f6f5f5);
+    border-top: 0.3px solid #ffffffc3;
+    background: -webkit-linear-gradient(to right, #e7e7e7, #bcbbbb);
+    background: linear-gradient(to right, #fafafa, #ffffff);
     margin-top: 10px;
 
 }
