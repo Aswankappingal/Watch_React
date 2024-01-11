@@ -5,8 +5,8 @@
     position: absolute;
     left: 110%;
     bottom: 41%;
-    background-color: white;
-    color: rgb(7, 7, 7);
+    background-color: rgba(206, 202, 202, 0.492);
+    color: rgb(255, 255, 255);
     padding: 1px 4px;
     border-radius: 10px;
 }
@@ -20,11 +20,11 @@
 .count-nav2{
     position: absolute;
     left: 29%;
-    bottom: 46%;
-    background-color: white;
-    color: rgb(7, 7, 7);
-    padding: 1px 4px;
-    border-radius: 20px;
+    bottom: 39%;
+    background-color: rgba(206, 202, 202, 0.492);
+    color: rgb(255, 255, 255);
+    padding: 1.5px 4px;
+    border-radius: 30px;
 }
 .reg{
     color: white;
