@@ -43,6 +43,8 @@ const WishList = () => {
         <div>
 
 
+
+
             <div className="main-ind">
 
                 <div className="main-sub-ind">
@@ -64,6 +66,10 @@ const WishList = () => {
                 </div>
             </div>
 
+            <div className="back-w">
+                <Link className='back-btn-w' to='/'>Back</Link>
+            </div>
+
 
             <div className="Shopping-bag-main">
 
@@ -83,43 +89,43 @@ const WishList = () => {
 
 
                     </>
-                ) :<>
+                ) : <>
 
-                {
-                    getPrdct.map((data,index)=>(
-                        <div className="shopping-bag-wish-banner" key={index}>
+                    {
+                        getPrdct.map((data, index) => (
+                            <div className="shopping-bag-wish-banner" key={index}>
 
-                        <div className="shopping-bag-wish-banner-images">
-                            <img src={data.banner} alt="" />
-                        </div>
+                                <div className="shopping-bag-wish-banner-images">
+                                    <img src={data.banner} alt="" />
+                                </div>
 
-                        <div className="shopping-bag-wish-banner-data">
-                            <p>Item No: NR6248NM01</p>
-                            <span id='price-wish'>{data.price}</span>  <span className='og-price' id='price-wishes'><strike>₹ 99999</strike></span>
-                            {/* <p>  <i className="fa fa-superpowers" aria-hidden="true"></i>  Add Gift Wrap</p> */}
-                            <p className='product_nmae'> <i className="fa fa-superpowers" aria-hidden="true" ></i>{data.productname}</p>
-                            <p>Dispatch By2nd Jan 2024</p>
-                            <div className="main-wish">
-                                <p> <i className="fa fa-heart-o" aria-hidden="true"></i> Come to Whish</p>
-                                <button className='btn-whish' onClick={()=>delProduct(data._id)}> <i className="fa fa-trash-o" aria-hidden="true"></i> Delete From Bag</button>
+                                <div className="shopping-bag-wish-banner-data">
+                                    <p>Item No: NR6248NM01</p>
+                                    <span id='price-wish'>{data.price}</span>  <span className='og-price' id='price-wishes'><strike>₹ 99999</strike></span>
+                                    {/* <p>  <i className="fa fa-superpowers" aria-hidden="true"></i>  Add Gift Wrap</p> */}
+                                    <p className='product_nmae'> <i className="fa fa-superpowers" aria-hidden="true" ></i>{data.productname}</p>
+                                    <p>Dispatch By2nd Jan 2024</p>
+                                    <div className="main-wish">
+                                        <p> <i className="fa fa-heart-o" aria-hidden="true"></i> Come to Whish</p>
+                                        <button className='btn-whish' onClick={() => delProduct(data._id)}> <i className="fa fa-trash-o" aria-hidden="true"></i> Delete From Bag</button>
+                                    </div>
+
+
+                                </div>
                             </div>
 
+                        ))
 
-                        </div>
-                    </div>
+                    }
 
-                    ))
-                   
+
+                </>
+
+
+
+
+
                 }
-
-         
-            </>
-            
-
-
-
-
-             }
 
 
 

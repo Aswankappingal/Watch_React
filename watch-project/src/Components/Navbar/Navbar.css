@@ -1,0 +1,31 @@
+.log-phone-ind{
+    position: relative;
+}
+.count-nav1{
+    position: absolute;
+    left: 110%;
+    bottom: 41%;
+    background-color: white;
+    color: rgb(7, 7, 7);
+    padding: 1px 4px;
+    border-radius: 10px;
+}
+.log-cart-ind2{
+    position: relative;
+    font-size: 13px;
+    margin-top: 10px;
+    
+    
+}
+.count-nav2{
+    position: absolute;
+    left: 29%;
+    bottom: 43%;
+    background-color: white;
+    color: rgb(7, 7, 7);
+    padding: 1px 3px;
+    border-radius: 20px;
+}
+.reg{
+    color: white;
+}

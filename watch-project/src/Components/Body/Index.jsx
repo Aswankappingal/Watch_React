@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Index.css'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import Navbar from '../Navbar/Navbar'
 
 const Index = () => {
 
@@ -66,7 +67,7 @@ const Index = () => {
     <div>
 
       <div className="main-ind">
-        <div className="main-sub-ind">
+        {/* <div className="main-sub-ind">
 
           <div className="log-phone-ind">
             <span><i className="fa fa-phone" aria-hidden="true" ></i></span><Link to={`/whishList/${id}`}  id='Linkkkkss'><span id='ind-num'>WISH</span></Link>
@@ -80,9 +81,13 @@ const Index = () => {
             <span><Link to={`CartCustomer/${id}`} id='Linkkkkss' > CART</Link> </span> <span><Link to={'/CustomerReg'} id='Linkkkkss'><span id='log-ind-l'>LOGIN</span></Link>  OR REGISTER</span>
           </div>
 
-        </div>
+        </div> */}
+
+      <Navbar />
 
       </div>
+
+
     
 
 
