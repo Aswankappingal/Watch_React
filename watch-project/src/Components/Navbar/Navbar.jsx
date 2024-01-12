@@ -84,12 +84,12 @@ const Navbar = () => {
             <div className="main-ind">
                 <div className="main-sub-ind">
 
-                    <div className="log-phone-ind">
-                        <span><i className="fa fa-phone" aria-hidden="true" ></i></span>
-                        <Link to={`/whishList/${Id}`} id='Linkkkkss'><span id='ind-num'>WISH</span>
-                        </Link>
-                        <div className="count-nav1">{wishlength}</div>
-                    </div>
+                      <div className="log-phone-ind">
+                          <span><i className="fa fa-phone" aria-hidden="true" ></i></span>
+                          <Link to={`/whishList/${Id}`} id='Linkkkkss'><span id='ind-num'>WISH</span>
+                          </Link>
+                          <div className="count-nav1">{wishlength}</div>
+                      </div>
 
                     <div className="text-sub-ind">
                         <p></p>

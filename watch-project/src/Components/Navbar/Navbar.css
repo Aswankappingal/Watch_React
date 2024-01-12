@@ -4,8 +4,8 @@
 .count-nav1{
     position: absolute;
     left: 110%;
-    bottom: 41%;
-    background-color: rgba(206, 202, 202, 0.492);
+    bottom: 39%;
+    background-color: rgba(226, 72, 72, 0.482);
     color: rgb(255, 255, 255);
     padding: 1px 4px;
     border-radius: 10px;
@@ -21,7 +21,7 @@
     position: absolute;
     left: 29%;
     bottom: 39%;
-    background-color: rgba(206, 202, 202, 0.492);
+    background-color: rgba(226, 72, 72, 0.482);
     color: rgb(255, 255, 255);
     padding: 1.5px 4px;
     border-radius: 30px;
