@@ -176,7 +176,7 @@ const Cartcustomer = () => {
               <td>₹ 99</td>
             </tr>
           </table>
-          <div className="table-ul eeyyyy"></div>
+          <div className="table-ul uuuu"></div>
           <table>
             <tr>
               <td className='total-text' id='td'>Total</td>
