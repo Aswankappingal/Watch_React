@@ -180,7 +180,7 @@ const Cartcustomer = () => {
           <table>
             <tr>
               <td className='total-text' id='td'>Total</td>
-              <td className='total-text'>₹ {totalPrice ? totalPrice + 99: 99}</td>
+              <td className='total-text-'>₹ {totalPrice ? totalPrice + 99: 99}</td>
             </tr>
           </table>
 
