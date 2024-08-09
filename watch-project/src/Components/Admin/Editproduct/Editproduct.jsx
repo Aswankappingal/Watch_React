@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 const Editproduct = () => {
     const {id}=useParams()
-    const navigate = useNavigate()
+    const navigate = useNavigatee()
     let Banner = "";
     let Images = "";
     const [getCat, setCat] = useState([])
